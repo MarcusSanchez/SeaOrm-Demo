@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS todos;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE todos (
+    id SERIAL PRIMARY KEY,
+    username varchar(100) REFERENCES users(username) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    completed BOOLEAN DEFAULT FALSE NOT NULL
+);
