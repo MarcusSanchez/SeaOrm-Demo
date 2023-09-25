@@ -34,10 +34,10 @@ fn addr() -> SocketAddr {
     let port = port.parse::<u16>().expect("Invalid Port Parsed");
     println!(
         r#"
-        ╔══════════════════════════╗
-        ║   Server Started on:     ║
-        ║   http://localhost:{pt}  ║
-        ╚══════════════════════════╝
+        ╔═══════════════════════════╗
+        ║    Server Started on:     ║
+        ║   http://localhost:{pt}   ║
+        ╚═══════════════════════════╝
         "#, pt = port
     );
     SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), port)
