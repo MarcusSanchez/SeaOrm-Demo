@@ -8,7 +8,7 @@ CREATE TABLE users (
 
 CREATE TABLE todos (
     id SERIAL PRIMARY KEY,
-    username varchar(100) REFERENCES users(username) NOT NULL,
+    username varchar(100) NOT NULL REFERENCES users(username) ON DELETE CASCADE,
     title VARCHAR(100) NOT NULL,
     description VARCHAR(255) NOT NULL,
     completed BOOLEAN DEFAULT FALSE NOT NULL
